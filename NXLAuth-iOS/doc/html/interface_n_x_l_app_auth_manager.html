@@ -104,7 +104,6 @@ Inheritance diagram for NXLAppAuthManager:</div>
  <div class="center">
   <img src="interface_n_x_l_app_auth_manager.png" usemap="#NXLAppAuthManager_map" alt=""/>
   <map id="NXLAppAuthManager_map" name="NXLAppAuthManager_map">
-<area href="protocol_o_i_d_auth_state_change_delegate-p.html" title="Delegate of the OIDAuthState used to monitor various changes in state. " alt="&lt;OIDAuthStateChangeDelegate&gt;" shape="rect" coords="206,0,402,24"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -117,7 +116,7 @@ Instance Methods</h2></td></tr>
 <tr class="memdesc:a6a040c5767dfa308280386d3ce301a0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an authorization request with opinionated defaults (a secure <code>state</code>, and PKCE with S256 as the <code>code_challenge_method</code>).  <a href="#a6a040c5767dfa308280386d3ce301a0f">More...</a><br /></td></tr>
 <tr class="separator:a6a040c5767dfa308280386d3ce301a0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e691415351d3c74f1c449c2be0faec9"><td class="memItemLeft" align="right" valign="top">(id&lt; OIDExternalUserAgentSession &gt;)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_x_l_app_auth_manager.html#a2e691415351d3c74f1c449c2be0faec9">ssoAuthStateByPresentingAuthorizationRequest:presentingViewController::</a></td></tr>
-<tr class="memdesc:a2e691415351d3c74f1c449c2be0faec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience method to create a <code><a class="el" href="interface_o_i_d_auth_state.html" title="A convenience class that retains the auth state between OIDAuthorizationResponses and OIDTokenRespons...">OIDAuthState</a></code> by presenting an authorization request from ssoAuthRequest method and performing the authorization code exchange in the case of code flow requests. For the hybrid flow, the caller should validate the id_token and c_hash, then perform the token request (<code><a class="el" href="interface_o_i_d_authorization_service.html#a74487299deeafa3fc5d302a7056aae80" title="Performs a token request. ">performTokenRequest:callback: (OIDAuthorizationService)</a></code>) and update the <a class="el" href="interface_o_i_d_auth_state.html" title="A convenience class that retains the auth state between OIDAuthorizationResponses and OIDTokenRespons...">OIDAuthState</a> with the results (<code><a class="el" href="interface_o_i_d_auth_state.html#a94e1b66da1874695710e4bcb759c69f4" title="Updates the authorization state based on a new token response. ">updateWithTokenResponse:error: (OIDAuthState)</a></code>).  <a href="#a2e691415351d3c74f1c449c2be0faec9">More...</a><br /></td></tr>
+<tr class="memdesc:a2e691415351d3c74f1c449c2be0faec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience method to create a <code>OIDAuthState</code> by presenting an authorization request from ssoAuthRequest method and performing the authorization code exchange in the case of code flow requests. For the hybrid flow, the caller should validate the id_token and c_hash, then perform the token request (<code>OIDAuthorizationService.performTokenRequest:callback:</code>) and update the OIDAuthState with the results (<code>OIDAuthState.updateWithTokenResponse:error:</code>).  <a href="#a2e691415351d3c74f1c449c2be0faec9">More...</a><br /></td></tr>
 <tr class="separator:a2e691415351d3c74f1c449c2be0faec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa03f278700ee0e54b50d4b32627f6d53"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_x_l_app_auth_manager.html#aa03f278700ee0e54b50d4b32627f6d53">getFreshToken:</a></td></tr>
 <tr class="memdesc:aa03f278700ee0e54b50d4b32627f6d53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calls the block with a valid access token (refreshing it first, if needed), or if a refresh was needed and failed, with the error that caused it to fail.  <a href="#aa03f278700ee0e54b50d4b32627f6d53">More...</a><br /></td></tr>
@@ -127,12 +126,10 @@ Instance Methods</h2></td></tr>
 <tr class="separator:a2cb9a97db438914db1905bf1ce887270"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2fafd151f4aadbf874545b6ef9a1e62"><td class="memItemLeft" align="right" valign="top">(void)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_x_l_app_auth_manager.html#ad2fafd151f4aadbf874545b6ef9a1e62">logOut</a></td></tr>
 <tr class="separator:ad2fafd151f4aadbf874545b6ef9a1e62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa21fa194a9e4bfe2b8d2a6935edb9e80"><td class="memItemLeft" align="right" valign="top">(id&lt; OIDExternalUserAgentSession &gt;)&#160;</td><td class="memItemRight" valign="bottom">- <a class="el" href="interface_n_x_l_app_auth_manager.html#aa21fa194a9e4bfe2b8d2a6935edb9e80">takeMultipleImagesWithCompletion:presentingViewController:callback:</a></td></tr>
-<tr class="separator:aa21fa194a9e4bfe2b8d2a6935edb9e80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a2565d62022867224fa5d8b8d5856a3fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="interface_o_i_d_auth_state.html">OIDAuthState</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_n_x_l_app_auth_manager.html#a2565d62022867224fa5d8b8d5856a3fe">authState</a></td></tr>
+<tr class="memitem:a2565d62022867224fa5d8b8d5856a3fe"><td class="memItemLeft" align="right" valign="top">OIDAuthState *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="interface_n_x_l_app_auth_manager.html#a2565d62022867224fa5d8b8d5856a3fe">authState</a></td></tr>
 <tr class="memdesc:a2565d62022867224fa5d8b8d5856a3fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">A convenience class that retains the auth state.  <a href="#a2565d62022867224fa5d8b8d5856a3fe">More...</a><br /></td></tr>
 <tr class="separator:a2565d62022867224fa5d8b8d5856a3fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -148,7 +145,7 @@ Properties</h2></td></tr>
         <tr>
           <td class="memname">- (void) getFreshToken: </td>
           <td></td>
-          <td class="paramtype">(void(^)(NSString *_Nonnull accessToken, NSString *_Nonnull idToken, <a class="el" href="interface_o_i_d_auth_state.html">OIDAuthState</a> *<a class="el" href="_n_x_l_app_auth_manager_8m.html#a0dbf71cb8104be1bc5a2c82fb333aa46">currentAuthState</a>, NSError *_Nullable error))&#160;</td>
+          <td class="paramtype">(void(^)(NSString *_Nonnull accessToken, NSString *_Nonnull idToken, OIDAuthState *<a class="el" href="_n_x_l_app_auth_manager_8m.html#a0dbf71cb8104be1bc5a2c82fb333aa46">currentAuthState</a>, NSError *_Nullable error))&#160;</td>
           <td class="paramname"><em>completion</em></td>
           <td></td>
         </tr>
@@ -224,7 +221,7 @@ Properties</h2></td></tr>
         <tr>
           <td class="paramkey">:</td>
           <td></td>
-          <td class="paramtype">(void(^)(<a class="el" href="interface_o_i_d_authorization_request.html">OIDAuthorizationRequest</a> *request))&#160;</td>
+          <td class="paramtype">(void(^)(OIDAuthorizationRequest *request))&#160;</td>
           <td class="paramname"><em>completion</em>&#160;</td>
         </tr>
         <tr>
@@ -255,7 +252,7 @@ Properties</h2></td></tr>
         <tr>
           <td class="memname">- (id&lt; OIDExternalUserAgentSession &gt;) ssoAuthStateByPresentingAuthorizationRequest: </td>
           <td></td>
-          <td class="paramtype">(<a class="el" href="interface_o_i_d_authorization_request.html">OIDAuthorizationRequest</a> *)&#160;</td>
+          <td class="paramtype">(OIDAuthorizationRequest *)&#160;</td>
           <td class="paramname"><em>authorizationRequest</em></td>
         </tr>
         <tr>
@@ -267,7 +264,7 @@ Properties</h2></td></tr>
         <tr>
           <td class="paramkey">:</td>
           <td></td>
-          <td class="paramtype">(void(^)(<a class="el" href="interface_o_i_d_auth_state.html">OIDAuthState</a> *<a class="el" href="interface_n_x_l_app_auth_manager.html#a2565d62022867224fa5d8b8d5856a3fe">authState</a>))&#160;</td>
+          <td class="paramtype">(void(^)(OIDAuthState *<a class="el" href="interface_n_x_l_app_auth_manager.html#a2565d62022867224fa5d8b8d5856a3fe">authState</a>))&#160;</td>
           <td class="paramname"><em>completion</em>&#160;</td>
         </tr>
         <tr>
@@ -278,7 +275,7 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Convenience method to create a <code><a class="el" href="interface_o_i_d_auth_state.html" title="A convenience class that retains the auth state between OIDAuthorizationResponses and OIDTokenRespons...">OIDAuthState</a></code> by presenting an authorization request from ssoAuthRequest method and performing the authorization code exchange in the case of code flow requests. For the hybrid flow, the caller should validate the id_token and c_hash, then perform the token request (<code><a class="el" href="interface_o_i_d_authorization_service.html#a74487299deeafa3fc5d302a7056aae80" title="Performs a token request. ">performTokenRequest:callback: (OIDAuthorizationService)</a></code>) and update the <a class="el" href="interface_o_i_d_auth_state.html" title="A convenience class that retains the auth state between OIDAuthorizationResponses and OIDTokenRespons...">OIDAuthState</a> with the results (<code><a class="el" href="interface_o_i_d_auth_state.html#a94e1b66da1874695710e4bcb759c69f4" title="Updates the authorization state based on a new token response. ">updateWithTokenResponse:error: (OIDAuthState)</a></code>). </p>
+<p>Convenience method to create a <code>OIDAuthState</code> by presenting an authorization request from ssoAuthRequest method and performing the authorization code exchange in the case of code flow requests. For the hybrid flow, the caller should validate the id_token and c_hash, then perform the token request (<code>OIDAuthorizationService.performTokenRequest:callback:</code>) and update the OIDAuthState with the results (<code>OIDAuthState.updateWithTokenResponse:error:</code>). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">authorizationRequest</td><td>The authorization request to present. </td></tr>
@@ -288,40 +285,6 @@ Properties</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A <code>OIDExternalUserAgentSession</code> instance which will terminate when it receives a <code>OIDExternalUserAgentSession.cancel</code> message, or after processing a <code>OIDExternalUserAgentSession.resumeExternalUserAgentFlowWithURL:</code> message. </dd></dl>
-
-</div>
-</div>
-<a id="aa21fa194a9e4bfe2b8d2a6935edb9e80"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa21fa194a9e4bfe2b8d2a6935edb9e80">&#9670;&nbsp;</a></span>takeMultipleImagesWithCompletion:presentingViewController:callback:()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">- (id&lt; OIDExternalUserAgentSession &gt;) takeMultipleImagesWithCompletion: </td>
-          <td></td>
-          <td class="paramtype">(<a class="el" href="interface_o_i_d_authorization_request.html">OIDAuthorizationRequest</a> *)&#160;</td>
-          <td class="paramname"><em>authorizationRequest</em></td>
-        </tr>
-        <tr>
-          <td class="paramkey">presentingViewController:</td>
-          <td></td>
-          <td class="paramtype">(UIViewController *)&#160;</td>
-          <td class="paramname"><em>presentingViewController</em></td>
-        </tr>
-        <tr>
-          <td class="paramkey">callback:</td>
-          <td></td>
-          <td class="paramtype">(<a class="el" href="_public_2_app_auth_2_o_i_d_auth_state_8h.html#ae9836f74a123616daac67f50b4cdaf4d">OIDAuthStateAuthorizationCallback</a>)&#160;</td>
-          <td class="paramname"><em>callback</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
 
 </div>
 </div>
@@ -355,7 +318,7 @@ Properties</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">- (<a class="el" href="interface_o_i_d_auth_state.html">OIDAuthState</a>*) authState</td>
+          <td class="memname">- (OIDAuthState*) authState</td>
         </tr>
       </table>
   </td>
@@ -370,8 +333,8 @@ Properties</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/Users/jasonlee/TM/XCode/Library/Heimdall/NXLAuth/NXLAuth/<a class="el" href="_n_x_l_app_auth_manager_8h_source.html">NXLAppAuthManager.h</a></li>
-<li>/Users/jasonlee/TM/XCode/Library/Heimdall/NXLAuth/NXLAuth/<a class="el" href="_n_x_l_app_auth_manager_8m.html">NXLAppAuthManager.m</a></li>
+<li>/NXLAuth/<a class="el" href="_n_x_l_app_auth_manager_8h_source.html">NXLAppAuthManager.h</a></li>
+<li>/NXLAuth/<a class="el" href="_n_x_l_app_auth_manager_8m.html">NXLAppAuthManager.m</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

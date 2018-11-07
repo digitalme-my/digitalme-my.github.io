@@ -27,14 +27,13 @@ var NAVTREE =
     [ "NXLAuth for iOS", "index.html", [
       [ "Introduction", "index.html#introduction", null ]
     ] ],
-    [ "Acknowledgements", "md___users_jasonlee__t_m__x_code__library__heimdall__n_x_l_auth__pods__target__support__files__pc045ce77dc8a276d150315d1fedef92a.html", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", "functions_func" ],
+        [ "All", "functions.html", null ],
+        [ "Functions", "functions_func.html", null ],
         [ "Properties", "functions_prop.html", null ]
       ] ]
     ] ],
@@ -42,10 +41,8 @@ var NAVTREE =
       [ "File List", "files.html", "files_dup" ],
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
-        [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ],
-        [ "Typedefs", "globals_type.html", null ],
-        [ "Macros", "globals_defs.html", null ]
+        [ "Typedefs", "globals_type.html", null ]
       ] ]
     ] ]
   ] ]
@@ -53,9 +50,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_app_auth-dummy_8m.html",
-"_public_2_app_auth_2_o_i_d_scope_utilities_8h_source.html",
-"interface_o_i_d_registration_response.html#a76e09d55eb916fb4a981a2ee31000b01"
+"_n_x_l_app_auth_manager_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
