@@ -62,7 +62,7 @@ in all protocol requests and responses.</p>
 <h4>
 <a id="supported-versions" class="anchor" href="#supported-versions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Supported Versions</h4>
 
-<p>AppAuth supports iOS 7 and above.</p>
+<p>NXLAuth supports iOS 7 and above.</p>
 
 <p>iOS 9+ uses the in-app browser tab pattern
 (via <code>SFSafariViewController</code>), and falls back to the system browser (mobile
@@ -74,7 +74,7 @@ Safari) on earlier versions.</p>
 <p>Both Custom URI Schemes (all supported versions of iOS) and Universal Links
 (iOS 9+) can be used with the library.</p>
 
-<p>In general, AppAuth can work with any Authorization Server (AS) that supports
+<p>In general, NXLAuth can work with any Authorization Server (AS) that supports
 <a href="https://tools.ietf.org/html/draft-ietf-oauth-native-apps">native apps</a>,
 either through custom URI scheme redirects, or universal links.
 AS's that assume all clients are web-based or require clients to maintain
@@ -86,22 +86,8 @@ confidentiality of the client secrets may not work well.</p>
 <h4>
 <a id="supported-versions-1" class="anchor" href="#supported-versions-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Supported Versions</h4>
 
-<p>AppAuth supports macOS (OS X) 10.8 and above.</p>
-
-<h4>
-<a id="authorization-server-requirements-1" class="anchor" href="#authorization-server-requirements-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Authorization Server Requirements</h4>
-
-<p>AppAuth for macOS supports both custom schemes, a loopback HTTP redirects
-via a small embedded server.</p>
-
-<p>In general, AppAuth can work with any Authorization Server (AS) that supports
-<a href="https://tools.ietf.org/html/draft-ietf-oauth-native-apps">native apps</a>,
-either through custom URI scheme, or loopback HTTP redirects.
-AS's that assume all clients are web-based or require clients to maintain
-confidentiality of the client secrets may not work well.</p>
-
 <h2>
-<a id="try" class="anchor" href="#try" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Try</h2>
+<!-- <a id="try" class="anchor" href="#try" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Try</h2>
 
 <p>Want to try out AppAuth? Just run:</p>
 
@@ -110,15 +96,15 @@ confidentiality of the client secrets may not work well.</p>
 
 <p>Follow the instructions in <a href="Example/README.md">Example/README.md</a> to configure
 with your own OAuth client (you need to update 3 configuration points with your
-client info to try the demo).</p>
+client info to try the demo).</p> -->
 
 <h2>
 <a id="setup" class="anchor" href="#setup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setup</h2>
-
+<!-- need to update -->
 <p>If you use <a href="https://guides.cocoapods.org/using/getting-started.html">CocoaPods</a>,
 simply add:</p>
 
-<pre><code>pod 'AppAuth'
+<pre><code>pod 'AppAuth', :git => 'https://github.com/nexlife/AppAuth-iOS.git'
 </code></pre>
 
 <p>To your <code>Podfile</code> and run <code>pod install</code>. Otherwise, add <code>AppAuth.xcodeproj</code>
@@ -325,8 +311,10 @@ recommend that users of the <code>OIDAuthState</code> convenience wrapper use th
 <code>performActionWithFreshTokens:</code> method to perform their API calls to avoid
 needing to worry about token freshness.</p>
 
-<div class="highlight highlight-source-objc"><pre>[_authState <span class="pl-c1">performActionWithFreshTokens:</span>^(<span class="pl-c1">NSString</span> *_Nonnull accessToken,
+<div class="highlight highlight-source-objc"><pre>NXLAppAuthManager *appAuthManager = [[NXLAppAuthManager alloc] init];
+  [appAuthManager <span class="pl-c1">getFreshTokens:</span>^(<span class="pl-c1">NSString</span> *_Nonnull accessToken,
                                            <span class="pl-c1">NSString</span> *_Nonnull idToken,
+                                           <span class="pl-c1">OIDAuthState</span> *_Nonnull currentAuthState,
                                            <span class="pl-c1">NSError</span> *_Nullable error) {
   <span class="pl-k">if</span> (error) {
     <span class="pl-c1">NSLog</span>(<span class="pl-s"><span class="pl-pds">@"</span>Error fetching fresh tokens: <span class="pl-c1">%@</span><span class="pl-pds">"</span></span>, [error <span class="pl-c1">localizedDescription</span>]);
@@ -339,7 +327,7 @@ needing to worry about token freshness.</p>
 <h2>
 <a id="api-documentation" class="anchor" href="#api-documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API Documentation</h2>
 
-<p>Browse the <a href="http://openid.github.io/AppAuth-iOS/docs/latest/annotated.html">API documentation</a>.</p>
+<p>Browse the <a href="https://nexlife.github.io/NXLAuth-iOS/doc/html/index.html">API documentation</a>.</p>
 
 <h2>
 <a id="included-samples" class="anchor" href="#included-samples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Included Samples</h2>
