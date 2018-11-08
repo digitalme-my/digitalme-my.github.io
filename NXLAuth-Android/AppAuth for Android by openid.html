@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>NXLAuth for Android</title>
+
+    <link rel="stylesheet" href="./AppAuth for Android by openid_files/styles.css">
+    <link rel="stylesheet" href="./AppAuth for Android by openid_files/styles-override.css">
+    <link rel="stylesheet" href="./AppAuth for Android by openid_files/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>NXLAuth for Android</h1>
+        <p></p>
+
+        <p class="view"><a href="https://github.com/openid/AppAuth-Android">View the Project on GitHub <small>openid/AppAuth-Android</small></a></p>
+
+        <p class="view"><a href="docs/latest/">Browse the API documentation</a></p>
+
+        <ul>
+          <li><a href="https://github.com/openid/AppAuth-Android/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/openid/AppAuth-Android/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/openid/AppAuth-Android">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+		  <h1>
+<a id="appauth-for-ios-and-macos" class="anchor" href="#appauth-for-ios-and-macos" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>NXLAuth for Android</h1>
+
+<p><a href="https://www.bitrise.io/app/8e4dbca635a964dc"><img src="https://cdn-images-1.medium.com/max/1600/0*QWNG5EAnPSaUSAHH.png" alt="Build Status" height="60" width="60"></a>
+  <a href="https://www.bitrise.io/app/8e4dbca635a964dc"><img src="http://blog.tirasa.net/gallery/tirasa/blog/oidc.png" alt="Build Status" height="60" width="60"></a>
+</p>
+        <p>NXLAuth for Android is a client SDK for communicating with <a href="https://tools.ietf.org/html/rfc6749">OAuth 2.0</a> and <a href="http://openid.net/specs/openid-connect-core-1_0.html">OpenID Connect</a> providers. It strives to
+directly map the requests and responses of those specifications, while following
+the idiomatic style of the implementation language. In addition to mapping the
+raw protocol flows, convenience methods are available to assist with common
+tasks like performing an action with fresh tokens.</p>
+
+<p>The library follows the best practices set out in <a href="https://tools.ietf.org/html/draft-ietf-oauth-native-apps">OAuth 2.0 for Native Apps</a>
+including using
+<a href="http://developer.android.com/tools/support-library/features.html#custom-tabs">Custom Tabs</a>
+for the auth request. For this reason,
+<code>WebView</code> is explicitly <em>not</em> supported due to usability and security reasons.</p>
+
+<p>The library also supports the <a href="https://tools.ietf.org/html/rfc7636">PKCE</a>
+extension to OAuth which was created to secure authorization codes in public
+clients when custom URI scheme redirects are used. The library is friendly to
+other extensions (standard or otherwise) with the ability to handle additional
+parameters in all protocol requests and responses.</p>
+
+<h2>
+<a id="download" class="anchor" href="#download" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Download</h2>
+<p>Please contact your NXLAuth representative for latest SDK.</p>
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h2>
+
+<h3>
+<a id="supported-android-versions" class="anchor" href="#supported-android-versions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Supported Android Versions</h3>
+
+<p>NXLAuth for Android supports Android API 16 (Jellybean) and above. Browsers which provide a custom tabs implementation are preferred by the library, but not required. Both Custom URI Schemes (all supported versions of Android) and App Links (Android M / API 23+) can be used with the library.</p>
+
+<p>When a Custom Tabs implementation is provided by a browser on the device (for
+example by
+<a href="https://developer.chrome.com/multidevice/android/customtabs">Chrome</a>), Custom
+Tabs are used for authorization requests. Otherwise, the default browser is used
+as a fallback.</p>
+
+<h2>
+<a id="building-the-project" class="anchor" href="#building-the-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Demo App</h2>
+
+<h3>
+<a id="prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prerequisites</h3>
+
+<p>The project requires the Android SDK for API level 23 (Marshmallow) to build,
+though the produced binaries only require API level 16 (Jellybean) to be
+used.</p>
+
+<h3>
+<a id="configure-the-demo-app" class="anchor" href="#configure-the-demo-app" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Configure the Demo App</h3>
+
+<p>A demo app is contained in this repository. To try out the demo, just open the project in Android Studio and run 'app'.</p>
+
+<h3>
+<a id="building-from-the-command-line" class="anchor" href="#building-from-the-command-line" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Building from the Command line</h3>
+
+<p>NXLAuth for Android uses Gradle as its build system. In order to build
+the library and app binaries, run <code>./gradlew assemble</code>.
+The library AAR files are output to <code>library/build/outputs/aar</code>, while the
+demo app is output to <code>app/build/outputs/apk</code>.
+In order to run the tests and code analysis, run <code>./gradlew check</code>.</p>
+
+<p>The build script attempts
+to guess the location of your SDK by looking at the values of $ANDROID_SDK_HOME
+and $ANDROID_HOME. If neither of these are defined or are not the SDK you
+wish to use, you must create a <code>local.properties</code> file in the project root.
+This file must define a property <code>sdk.dir</code> that points to your SDK root
+directory. For example:</p>
+
+<pre><code>sdk.dir=/path/to/android-sdk
+</code></pre>
+
+<h3>
+<a id="building-from-android-studio" class="anchor" href="#building-from-android-studio" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Building from Android Studio</h3>
+
+<p>In AndroidStudio, File -&gt; New -&gt; Import project. Select the root folder
+(the one with the <code>build.gradle</code> file).</p>
+
+<p>If you get an error like:
+<code>Error:Could not find com.android.support:customtabs:23.2.0.</code> then be sure you
+have installed the Android Support Library from the Android SDK Manager.
+Follow the Android Studio prompts to resolve the dependencies automatically.</p>
+
+<h2>
+<a id="auth-flow" class="anchor" href="#auth-flow" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Auth Flow</h2>
+
+<p>NXLAuth supports both manual interaction with the Authorization Server
+where you need to perform your own token exchanges, as well as convenience
+methods that perform some of this logic for you. This example
+performs a manual exchange, and stores the result as an <code>AuthState</code> object.</p>
+
+<h2>
+<a id="api-documentation" class="anchor" href="#api-documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API Documentation</h2>
+
+<p>Browse the <a href="./javadocs/index.html">API documentation</a>.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/openid">openid</a></p>
+        <p><small>Hosted on GitHub Pages — Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="./AppAuth for Android by openid_files/scale.fix.js"></script>
+    
+  
+
+</body></html>
