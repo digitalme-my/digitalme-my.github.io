@@ -18,7 +18,7 @@
         <h1>NXLAuth for Android</h1>
         <p></p>
 
-        <p class="view"><a href="https://github.com/openid/AppAuth-Android">View the Project on GitHub <small>openid/AppAuth-Android</small></a></p>
+        <p class="view"><a href="https://github.com/nexlife/NXLAuth-Android">View the Project on GitHub <small>nexlife/NXLAuth-Android</small></a></p>
 
         <p class="view"><a href="docs/latest/">Browse the API documentation</a></p>
 
@@ -116,13 +116,100 @@ have installed the Android Support Library from the Android SDK Manager.
 Follow the Android Studio prompts to resolve the dependencies automatically.</p>
 
 <h2>
-<a id="auth-flow" class="anchor" href="#auth-flow" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Auth Flow</h2>
+<a id="auth-flow" class="anchor" href="#auth-flow" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Auth Flow Implementation</h2>
 
-<p>NXLAuth supports both manual interaction with the Authorization Server
-where you need to perform your own token exchanges, as well as convenience
-methods that perform some of this logic for you. This example
-performs a manual exchange, and stores the result as an <code>AuthState</code> object.</p>
+<p>First, an NXLAuth instance must be created and initialized with client id supplied.</p>
+		  
+<p><code><pre>import my.com.nexlife.nxlauth.AuthManager;
+import my.com.nexlife.nxlauth.SDKMessages;
+import my.com.nexlife.nxlauth.SDKScopes;
 
+...
+
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    ...
+    AuthManager mAuthManager = new AuthManager.Builder("client-id", getApplicationContext())
+        .setTag("LOGCAT TAG")
+        .setScope(SDKScopes.OPEN_ID, SDKScopes.OFFLINE)
+        .build();
+    ...
+  }</pre></code></p>
+
+<h2>
+<a id="get-access-token" class="anchor" href="#get-access-token" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting access token</h2>
+
+<p>Given a successful authorization (build does not throw exception), a token request can be made and a token response can be retrieved via callback as per example below:</p>
+
+<h3>
+Via lambda expression</h3>
+<p><code><pre>  private void getAccessToken() {
+    /**
+     * This callback needs to be implemented by tenant
+     */
+    this.mAuthManager.getAccessToken((accessToken, ex) -> {
+      if (ex == null) {
+        // Do stuffs with the access token retrieved
+      } else {
+        // Capture or log the exception
+      }
+    });
+  }</pre></code></p>
+<h3>
+Via implementation of interface <code>AuthManager.NXLCallback</code></h3>
+<p><code><pre>  private void getAccessToken() {
+    /**
+     * This callback needs to be implemented by tenant
+     */
+    this.mAuthManager.getAccessToken(new AuthManager.NXLCallback() {
+      @Override
+      public void onComplete(@NonNull String accessToken, @NonNull Exception ex) {
+        if (ex == null) {
+          // Do stuffs with the access token retrieved
+        } else {
+          // Capture or log the exception
+        }
+      }
+    });
+  }</pre></code></p>
+
+<h2>
+<a id="get-user-info" class="anchor" href="#get-user-info" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Getting user info</h2>
+
+<p>Given a successful authorization (build does not throw exception), a user info request can be made and a response can be retrieved via callback as per example below:</p>
+
+<h3>
+Via lambda expression</h3>
+<p><code><pre>  private void getUserInfo() {
+    /**
+     * This callback needs to be implemented by tenant
+     */
+    this.mAuthManager.getUserInfo((response, ex) -> {
+      if (ex == null) {
+        // Do stuffs with the user info retrieved
+      } else {
+        // Capture or log the exception
+      }
+    });
+  }</pre></code></p>
+<h3>
+Via implementation of interface <code>AuthManager.NXLCallback</code></h3>
+<p><code><pre>  private void getUserInfo() {
+    /**
+     * This callback needs to be implemented by tenant
+     */
+    this.mAuthManager.geUserInfo(new AuthManager.NXLCallback() {
+      @Override
+      public void onComplete(@NonNull String response, @NonNull Exception ex) {
+        if (ex == null) {
+          // Do stuffs with the access token retrieved
+        } else {
+          // Capture or log the exception
+        }
+      }
+    });
+  }</pre></code></p>
+		  
 <h2>
 <a id="api-documentation" class="anchor" href="#api-documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>API Documentation</h2>
 
